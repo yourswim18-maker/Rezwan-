@@ -1,0 +1,199 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kids English Poems</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #fff8e7;
+  color: #333;
+}
+header {
+  background: linear-gradient(135deg,#ff8a65,#ffca55);
+  text-align: center;
+  padding: 35px 15px;
+  color: white;
+}
+header h1 {
+  font-size: 32px;
+  margin: 0 0 10px;
+}
+header p {
+  font-size: 17px;
+}
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 20px;
+}
+.poems {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
+  gap: 22px;
+}
+.card {
+  background: white;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px #00000018;
+  text-align: center;
+  padding-bottom: 20px;
+}
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+.card h2 {
+  color: #ff7043;
+}
+.poem {
+  white-space: pre-line;
+  line-height: 1.7;
+  padding: 0 15px;
+  font-size: 16px;
+}
+button {
+  background: #ff7043;
+  border: none;
+  color: white;
+  padding: 11px 22px;
+  border-radius: 25px;
+  font-size: 15px;
+  cursor: pointer;
+  margin: 5px;
+}
+button:hover {
+  background: #e85b32;
+}
+footer {
+  text-align: center;
+  background: #333;
+  color: white;
+  padding: 22px;
+  margin-top: 30px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>🌈 Kids English Poems</h1>
+  <p>Learn English with Fun, Poems and Pictures!</p>
+</header>
+
+<div class="container">
+  <div class="poems">
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=600" alt="Beautiful morning">
+      <h2>☀️ Good Morning</h2>
+      <div class="poem" id="p1">
+Good morning, sun so bright,
+Fill the world with golden light.
+Birds are singing in the tree,
+Good morning to you and me!
+      </div>
+      <button onclick="speak('p1')">🔊 Listen</button>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=600" alt="Nature">
+      <h2>🌳 Nature</h2>
+      <div class="poem" id="p2">
+Trees are green and skies are blue,
+Flowers bloom for me and you.
+Rivers sing and breezes play,
+Nature makes a lovely day!
+      </div>
+      <button onclick="speak('p2')">🔊 Listen</button>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1511497584788-876760111969?w=600" alt="Little birds">
+      <h2>🐦 Little Bird</h2>
+      <div class="poem" id="p3">
+Little bird up in the sky,
+Spread your wings and fly so high.
+Sing a song for everyone,
+Play beneath the golden sun!
+      </div>
+      <button onclick="speak('p3')">🔊 Listen</button>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=600" alt="Rainbow">
+      <h2>🌈 Rainbow</h2>
+      <div class="poem" id="p4">
+Rainbow shining in the sky,
+Seven colours way up high.
+After rain, you come to play,
+Making smiles throughout the day!
+      </div>
+      <button onclick="speak('p4')">🔊 Listen</button>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?w=600" alt="Beautiful garden">
+      <h2>🌸 My Garden</h2>
+      <div class="poem" id="p5">
+Flowers dancing in the breeze,
+Butterflies among the trees.
+My little garden shines so bright,
+A lovely and colourful sight!
+      </div>
+      <button onclick="speak('p5')">🔊 Listen</button>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?w=600" alt="Happy family">
+      <h2>❤️ My Family</h2>
+      <div class="poem" id="p6">
+My family is kind and dear,
+They always make me smile and cheer.
+Together we laugh and play,
+I love my family every day!
+      </div>
+      <button onclick="speak('p6')">🔊 Listen</button>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <h3>Kids English Poems 🌟</h3>
+  <p>Created by Owner: Rezwan Riyad</p>
+  <p>© 2026 All Rights Reserved</p>
+</footer>
+
+<script>
+function speak(id) {
+  if (!('speechSynthesis' in window)) {
+    alert("Sorry! Your browser does not support voice.");
+    return;
+  }
+
+  speechSynthesis.cancel();
+
+  const text = document.getElementById(id).innerText;
+  const speech = new SpeechSynthesisUtterance(text);
+
+  speech.lang = "en-US";
+  speech.rate = 0.8;
+  speech.pitch = 1.1;
+
+  speechSynthesis.speak(speech);
+}
+</script>
+
+</body>
+</html>
